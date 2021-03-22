@@ -4,10 +4,10 @@ from datetime import datetime
 
 
 class DailyDataBase(BaseModel):
-    actualArvTime: datetime=None
-    actualDepartureTime: datetime=None
+    actualArvTime: datetime = None
+    actualDepartureTime: datetime = None
 
-class DailyDataCreate(BaseModel):
+class DailyDataCreate(DailyDataBase):
     pass
 
 
@@ -25,6 +25,11 @@ class TrainBase(BaseModel):
 
 
 class TrainCreate(TrainBase):
+    expectedArvTime: datetime
+    expectedDepartureTime: datetime
+
+
+class TrainUpdate(TrainBase):
     expectedArvTime: datetime
     expectedDepartureTime: datetime
 
